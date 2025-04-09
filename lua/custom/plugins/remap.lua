@@ -1,0 +1,48 @@
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
+
+vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Remove next line break' })
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Jump half page down recenter view' })
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Jump half page up and recenter view' })
+vim.keymap.set('n', 'n', 'nzzzv', { desc = 'go to next occurence and recenter view' })
+vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'go to previous occurence and recenter view' })
+
+vim.keymap.set('n', 'x', '"_x', { desc = 'Delete to null buffer' })
+vim.keymap.set('x', '<leader>p', '"_dP', { desc = 'Paste and delete selection to null buffer' })
+
+vim.keymap.set('n', '<leader>y', '"+y', { desc = 'Yank to system clipboard' })
+vim.keymap.set('v', '<leader>y', '"+y', { desc = 'Yank to system clipboard' })
+vim.keymap.set('n', '<leader>Y', '"+Y', { desc = 'Yank to system clipboard' })
+
+vim.keymap.set('n', '<leader>d', '"_d', { desc = 'Delete to null buffer' })
+vim.keymap.set('v', '<leader>d', '"_d', { desc = 'Delete selection to null buffer' })
+vim.keymap.set('n', '<leader>c', '"_c', { desc = 'Delete to null buffer and enter insert mode' })
+
+vim.keymap.set('n', '<C-k>', '<cmd>cnext<CR>zz', { desc = 'Go to next compiler error' })
+vim.keymap.set('n', '<C-j>', '<cmd>cprev<CR>zz', { desc = 'Go to prev compiler error' })
+vim.keymap.set('n', '<leader>k', '<cmd>lnext<CR>zz', { desc = 'Go to next error in list' })
+vim.keymap.set('n', '<leader>j', '<cmd>lprev<CR>zz', { desc = 'Go to prev error in list' })
+
+vim.keymap.set('n', '<leader>s', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', { desc = 'Substitute word under cursor' })
+
+vim.keymap.set('n', '<leader>E', '<cmd> lua vim.diagnostic.open_float()<CR>', { desc = 'Open diagnostic float' })
+vim.keymap.set('n', '<leader>hh', '<cmd> lua vim.lsp.buf.hover() <CR>', { desc = 'Show language server hover info' })
+vim.keymap.set('n', '<leader>cs', '<cmd> ClangdSwitchSourceHeader<CR>', { desc = 'Switch to corresponding header/source file' })
+vim.keymap.set('n', '<leader>ut', vim.cmd.UndotreeToggle, { desc = 'Toggle UndoTree View' })
+vim.keymap.set('n', '<leader>md', '<cmd>MarkdownPreviewToggle<CR>', { desc = 'Toggle Markdown Preview' })
+
+vim.keymap.set('n', 'Q', '<nop>') -- Unbind macro record key
+vim.keymap.set({ 'n', 'i', 'c' }, '<Up>', '<nop>')
+vim.keymap.set({ 'n', 'i', 'c' }, '<Down>', '<nop>')
+vim.keymap.set({ 'n', 'i', 'c' }, '<Left>', '<nop>')
+vim.keymap.set({ 'n', 'i', 'c' }, '<Right>', '<nop>')
+
+-- Binds to move around in command mode without arrow keys
+vim.keymap.set('c', '<C-l>', '<Right>', { desc = 'Move right' })
+vim.keymap.set('c', '<C-h>', '<Left>', { desc = 'Move left' })
+vim.keymap.set('c', '<C-j>', '<Down>', { desc = 'Move down' })
+vim.keymap.set('c', '<C-k>', '<Up>', { desc = 'Move up' })
+vim.keymap.set('c', '<C-w>', '<S-Right>', { desc = 'Go to next word' })
+vim.keymap.set('c', '<C-b>', '<S-left>', { desc = 'Go to prev word' })
+
+return {}
