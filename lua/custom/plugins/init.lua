@@ -8,8 +8,23 @@
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrw = 1
 
+function file_exists(name)
+  local f = io.open(name, 'r')
+  return f ~= nil and io.close(f)
+end
+
+function get_path(str)
+  return str:match '(.*[/\\])'
+end
+
 if #vim.v.argv > 2 then
-  vim.fn.chdir(vim.v.argv[3])
+  path = vim.v.argv[3]
+
+  if not file_exists(path) then
+    vim.fn.chdir(path)
+  else
+    vim.fn.chdir(get_path(path))
+  end
 end
 
 return {}
