@@ -8,4 +8,8 @@
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrw = 1
 
+if #vim.v.argv > 2 then
+  vim.fn.chdir(vim.v.argv[3])
+end
+
 return {}
