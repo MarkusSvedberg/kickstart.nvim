@@ -38,11 +38,14 @@ vim.keymap.set({ 'n', 'i', 'c' }, '<Left>', '<nop>')
 vim.keymap.set({ 'n', 'i', 'c' }, '<Right>', '<nop>')
 
 -- Binds to move around in command mode without arrow keys
-vim.keymap.set('c', '<C-l>', '<Right>', { desc = 'Move right' })
-vim.keymap.set('c', '<C-h>', '<Left>', { desc = 'Move left' })
-vim.keymap.set('c', '<C-j>', '<Down>', { desc = 'Move down' })
-vim.keymap.set('c', '<C-k>', '<Up>', { desc = 'Move up' })
-vim.keymap.set('c', '<C-w>', '<S-Right>', { desc = 'Go to next word' })
-vim.keymap.set('c', '<C-b>', '<S-left>', { desc = 'Go to prev word' })
+vim.keymap.set({ 'i', 'c' }, '<C-l>', '<Right>', { desc = 'Move right' })
+vim.keymap.set({ 'i', 'c' }, '<C-h>', '<Left>', { desc = 'Move left' })
+vim.keymap.set({ 'i', 'c' }, '<C-j>', '<Down>', { desc = 'Move down' })
+vim.keymap.set({ 'i', 'c' }, '<C-k>', '<Up>', { desc = 'Move up' })
+vim.keymap.set({ 'i', 'c' }, '<C-w>', '<S-Right>', { desc = 'Go to next word' })
+vim.keymap.set({ 'i', 'c' }, '<C-b>', '<S-left>', { desc = 'Go to prev word' })
+
+vim.keymap.set('n', '<S-h>', 'gT', { desc = 'Switch to prior tab' })
+vim.keymap.set('n', '<S-l>', 'gt', { desc = 'Switch to next tab' })
 
 return {}
