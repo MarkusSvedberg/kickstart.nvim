@@ -45,7 +45,11 @@ vim.keymap.set({ 'i', 'c' }, '<C-k>', '<Up>', { desc = 'Move up' })
 vim.keymap.set({ 'i', 'c' }, '<C-w>', '<S-Right>', { desc = 'Go to next word' })
 vim.keymap.set({ 'i', 'c' }, '<C-b>', '<S-left>', { desc = 'Go to prev word' })
 
+-- Tab control
 vim.keymap.set('n', '<S-h>', 'gT', { desc = 'Switch to prior tab' })
 vim.keymap.set('n', '<S-l>', 'gt', { desc = 'Switch to next tab' })
+
+-- Use pretty hover
+vim.keymap.set('n', 'K', '<cmd> lua require("pretty_hover").hover() <CR>', { desc = 'Show LSP hover (pretty)' })
 
 return {}
