@@ -324,6 +324,8 @@ require('lazy').setup({
         --  All the info you're looking for is in `:help telescope.setup()`
         --
         defaults = {
+          wrap_results = true,
+          path_display = { 'smart' },
           mappings = {
             i = { ['<enter>'] = 'file_tab' },
             n = { ['<enter>'] = 'file_tab' },
