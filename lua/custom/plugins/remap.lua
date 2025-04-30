@@ -52,4 +52,7 @@ vim.keymap.set('n', '<S-l>', 'gt', { desc = 'Switch to next tab' })
 -- Use pretty hover
 vim.keymap.set('n', 'K', '<cmd> lua require("pretty_hover").hover() <CR>', { desc = 'Show LSP hover (pretty)' })
 
+-- Neogen keybind
+vim.keymap.set('n', '<leader>ng', '<cmd>Neogen<CR>', { desc = 'Generate doxygen snippet' })
+
 return {}
