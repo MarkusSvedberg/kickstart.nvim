@@ -48,7 +48,7 @@ vim.keymap.set({ 'i', 'c' }, '<C-b>', '<S-left>', { desc = 'Go to prev word' })
 -- Tab control
 vim.keymap.set('n', '<S-h>', 'gT', { desc = 'Switch to prior tab' })
 vim.keymap.set('n', '<S-l>', 'gt', { desc = 'Switch to next tab' })
---
+
 -- Open netrw
 vim.keymap.set('n', '<leader>N', '<cmd>Explore<CR>', { desc = 'Open netrw' })
 
@@ -58,4 +58,17 @@ vim.keymap.set('n', 'K', '<cmd> lua require("pretty_hover").hover() <CR>', { des
 -- Neogen keybind
 vim.keymap.set('n', '<leader>ng', '<cmd>Neogen<CR>', { desc = 'Generate doxygen snippet' })
 
+-- Luasnip
+local ls = require 'luasnip'
+vim.keymap.set({ 'i', 's' }, '<A-e>', function()
+  if ls.choice_active() then
+    ls.change_choice(1)
+  end
+end, { silent = true, desc = 'Cycle snippet choice' })
+vim.keymap.set({ 'i', 's' }, '<A-l>', function()
+  ls.jump(1)
+end, { silent = true, desc = 'Move to next node in snippet' })
+vim.keymap.set({ 'i', 's' }, '<A-h>', function()
+  ls.jump(-1)
+end, { silent = true, desc = 'Move to previous node in snippet' })
 return {}
