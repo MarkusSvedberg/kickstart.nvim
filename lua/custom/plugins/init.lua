@@ -4,14 +4,8 @@
 -- See the kickstart.nvim README for more information
 
 -- Stop netrw from loading
-vim.g.loaded_netrwPlugin = 1
-vim.g.loaded_netrw = 1
 
 -- Change path to current opened file or directory
-local function get_path(str)
-  return str:match '(.*[/\\])'
-end
-
 if #vim.v.argv > 2 then
   local path = vim.v.argv[3]
 
