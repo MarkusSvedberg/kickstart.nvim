@@ -26,7 +26,7 @@ end
 
 ls.add_snippets('all', {
   -- trigger is `fn`, second argument to snippet-constructor are the nodes to insert into the buffer on expansion.
-  s('#ifn', {
+  s('#ifndef', {
     -- Simple static text.
     t '#ifndef ',
     -- function, first parameter is the function, second the Placeholders
@@ -41,6 +41,31 @@ ls.add_snippets('all', {
     t { '', '#endif //' },
     f(copy, 1),
     t { '', '' },
+  }),
+
+  s('typedef', {
+    t 'typedef ',
+    c(1, {
+      sn(nil, {
+        t 'struct',
+        t { '', '{' },
+        t { '', '\t' },
+        i(2), -- struct body
+        t { '', '} ' },
+        i(1), -- struct name
+        t ';',
+      }),
+      sn(nil, {
+        t 'enum ',
+        i(1), -- enum name
+        t { '', '{' },
+        t { '', '\t' },
+        i(2), -- enum body
+        t { '', '} ' },
+        rep(1), -- repeat enum name
+        t ';',
+      }),
+    }),
   }),
 })
 
