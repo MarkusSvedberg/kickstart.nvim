@@ -593,7 +593,7 @@ require('lazy').setup({
       local servers = {
         clangd = {
           filetypes = { 'c', 'h', 'cpp', 'hpp', 'cc', 'hh' },
-          cmd = { 'clangd', '--background-index', '-j=4' },
+          cmd = { 'clangd', '--clang-tidy', '--background-index', '-j=4' },
         },
         -- gopls = {},
         pyright = {},
