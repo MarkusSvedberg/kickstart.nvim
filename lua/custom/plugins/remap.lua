@@ -49,9 +49,6 @@ vim.keymap.set({ 'i', 'c' }, '<C-b>', '<S-left>', { desc = 'Go to prev word' })
 vim.keymap.set('n', '<S-h>', 'gT', { desc = 'Switch to prior tab' })
 vim.keymap.set('n', '<S-l>', 'gt', { desc = 'Switch to next tab' })
 
--- Bind ':w' to 'write | edit', i.e. write first and then 'edit' the file (reload). This is necessary for clang-tidy.
-vim.cmd 'command! W write | edit'
-
 -- Open netrw
 vim.keymap.set('n', '<leader>N', '<cmd>Explore<CR>', { desc = 'Open netrw' })
 
@@ -74,4 +71,10 @@ end, { silent = true, desc = 'Move to next node in snippet' })
 vim.keymap.set({ 'i', 's' }, '<A-h>', function()
   ls.jump(-1)
 end, { silent = true, desc = 'Move to previous node in snippet' })
+
+-- Command remaps
+-- Bind ':w' to 'write | edit', i.e. write first and then 'edit' the file (reload). This is necessary for clang-tidy.
+vim.cmd 'command! W write | edit'
+vim.cmd 'command! E tabnew | Ex'
+
 return {}
