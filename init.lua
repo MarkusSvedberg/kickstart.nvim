@@ -327,10 +327,6 @@ require('lazy').setup({
         defaults = {
           wrap_results = true,
           path_display = { 'smart' },
-          mappings = {
-            i = { ['<enter>'] = 'file_tab' },
-            n = { ['<enter>'] = 'file_tab' },
-          },
         },
         -- pickers = {}
         extensions = {
