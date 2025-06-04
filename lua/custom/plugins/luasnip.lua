@@ -49,7 +49,7 @@ ls.add_snippets('all', {
       sn(nil, {
         t 'struct',
         t { '', '{' },
-        t { '', '\t' },
+        t { '', '    ' },
         i(2), -- struct body
         t { '', '} ' },
         i(1), -- struct name
@@ -59,7 +59,7 @@ ls.add_snippets('all', {
         t 'enum ',
         i(1), -- enum name
         t { '', '{' },
-        t { '', '\t' },
+        t { '', '    ' },
         i(2), -- enum body
         t { '', '} ' },
         rep(1), -- repeat enum name
