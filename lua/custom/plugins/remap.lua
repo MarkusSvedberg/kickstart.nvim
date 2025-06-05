@@ -27,7 +27,7 @@ vim.keymap.set('n', '<leader>s', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left>
 
 vim.keymap.set('n', '<leader>E', '<cmd> lua vim.diagnostic.open_float()<CR>', { desc = 'Open diagnostic float' })
 vim.keymap.set('n', '<leader>hh', '<cmd> lua vim.lsp.buf.hover() <CR>', { desc = 'Show language server hover info' })
-vim.keymap.set('n', '<leader>cs', '<cmd> ClangdSwitchSourceHeader<CR>', { desc = 'Switch to corresponding header/source file' })
+vim.keymap.set('n', '<leader>cs', '<cmd> LspClangdSwitchSourceHeader<CR>', { desc = 'Switch to corresponding header/source file' })
 vim.keymap.set('n', '<leader>ut', vim.cmd.UndotreeToggle, { desc = 'Toggle UndoTree View' })
 vim.keymap.set('n', '<leader>md', '<cmd>MarkdownPreviewToggle<CR>', { desc = 'Toggle Markdown Preview' })
 
