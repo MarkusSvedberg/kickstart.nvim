@@ -28,6 +28,14 @@ vim.lsp.config('rust_analyzer', {
 })
 vim.lsp.enable 'rust_analyzer'
 
+vim.lsp.config('csharp-language-server', {
+  cmd = { 'csharp-ls' },
+  filetypes = { 'cs' },
+  root_dir = vim.fs.root(0, { '*.sln', '.git' }),
+})
+
+vim.lsp.enable 'csharp-language-server'
+
 vim.lsp.config('zls', {
   settings = {
     zls = {
